@@ -6,3 +6,4 @@ Curso Completo de Desenvolvimento Backend baseado em [GOLang](https://go.dev/) f
 
 - [Docker](https://docs.docker.com/engine/install/)
 - [Migrate CLI](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
+- [sqlc CLI](https://docs.sqlc.dev/en/stable/overview/install.html)
