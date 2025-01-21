@@ -18,4 +18,19 @@ migratedown:
 sqlc:
 	sqlc generate
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc
+test:
+ifdef function
+ifdef package
+	go test -v -cover ./${package}/... -run ${function}
+else
+	go test -v -cover ./... -run ${function}
+endif
+else
+ifdef package
+	go test -v -cover ./${package}/...
+else
+	go test -v -cover ./...
+endif
+endif
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test
