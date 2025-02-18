@@ -1,7 +1,6 @@
 package util
 
 import (
-	"log"
 	"time"
 
 	"github.com/spf13/viper"
@@ -41,10 +40,10 @@ func LoadConfig(path string) (config Config, err error) {
 	sysEnv.BindEnv("DB_SOURCE")
 	sysEnv.BindEnv("DB_DRIVER")
 	sysEnv.BindEnv("SERVER_ADDRESS")
+	sysEnv.BindEnv("TOKEN_SYMMETRIC_KEY")
+	sysEnv.BindEnv("ACCESS_TOKEN_DURATION")
 
 	err = sysEnv.Unmarshal(&config)
-
-	log.Print(config)
 	return
 
 }
